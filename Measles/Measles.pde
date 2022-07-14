@@ -26,36 +26,36 @@ void setup() {
   
   
   //Population - Eyes
-  xLeftEye = xCenter - 1/4;
-  yLeftEye = yCenter + 1/4;
-  eyeDiameter = smallerDimension*1/4;
-  xRightEye = xCenter + 1/4;
-  yRightEye = yCenter + 1/4;
+  xLeftEye = xCenter + 1/8;
+  yLeftEye = yCenter ;
+  eyeDiameter = smallerDimension*1/8;
+  xRightEye = xCenter ;
+  yRightEye = yCenter ;
   //End Population - Eyes
   
   
-  //Population - Nose
-  xNoseBridge = xCenter;
-  yNoseBridge = yCenter;
-  xLeftNostril = xCenter - 1/4;
-  yLeftNOstril = yCenter - 1/4;
-  xRightNostril = xCenter + 1/4;
-  yRightNostril = yCenter - 1/4;
-  //End Population - Nose
+  ////Population - Nose
+  //xNoseBridge = xCenter;
+  //yNoseBridge = yCenter;
+  //xLeftNostril = xCenter - 1/4;
+  //yLeftNOstril = yCenter - 1/4;
+  //xRightNostril = xCenter + 1/4;
+  //yRightNostril = yCenter - 1/4;
+  ////End Population - Nose
   
   
-  //Population Mouth
-  xLeftMouth = xCenter - 1/4;
-  yLeftMouth = yCenter - 1/4;
-  xRightMouth = xCenter + 1/4;
-  yRightMouth = yCenter - 1/4;
-  //End Population - Mouth
+  ////Population Mouth
+  //xLeftMouth = xCenter - 1/4;
+  //yLeftMouth = yCenter - 1/4;
+  //xRightMouth = xCenter + 1/4;
+  //yRightMouth = yCenter - 1/4;
+  ////End Population - Mouth
   
   
   //Population Measle
-  xMeasle = ;
-  yMeasle = ;
-  measleDiameter;
+  //xMeasle = ;
+  //yMeasle = ;
+  //measleDiameter;
   //End Population Measle
   
 
