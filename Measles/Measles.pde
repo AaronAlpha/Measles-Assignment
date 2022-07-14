@@ -26,29 +26,29 @@ void setup() {
   
   
   //Population - Eyes
-  xLeftEye = ;
-  yLeftEye = ;
-  eyeDiameter = ;
-  xRightEye = ;
-  yRightEye = ;
+  xLeftEye = xCenter - 1/4;
+  yLeftEye = yCenter + 1/4;
+  eyeDiameter = smallerDimension*1/4;
+  xRightEye = xCenter + 1/4;
+  yRightEye = yCenter + 1/4;
   //End Population - Eyes
   
   
   //Population - Nose
-  xNoseBridge = ;
-  yNoseBridge = ;
-  xLeftNostril = ;
-  yLeftNOstril = ;
-  xRightNostril = ;
-  yRightNostril = ;
+  xNoseBridge = xCenter;
+  yNoseBridge = yCenter;
+  xLeftNostril = xCenter - 1/4;
+  yLeftNOstril = yCenter - 1/4;
+  xRightNostril = xCenter + 1/4;
+  yRightNostril = yCenter - 1/4;
   //End Population - Nose
   
   
   //Population Mouth
-  xLeftMouth = ;
-  yLeftMouth = ;
-  xRightMouth = ;
-  yRightMouth = ;
+  xLeftMouth = xCenter - 1/4;
+  yLeftMouth = yCenter - 1/4;
+  xRightMouth = xCenter + 1/4;
+  yRightMouth = yCenter - 1/4;
   //End Population - Mouth
   
   
