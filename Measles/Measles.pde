@@ -26,7 +26,7 @@ void setup() {
   
   
   //Population - Eyes
-  xLeftEye = xCenter + xCenter*1/4;
+  xLeftEye = xCenter - xCenter*1/4;
   yLeftEye = yCenter - yCenter*1/4;
   eyeDiameter = smallerDimension*1/8;
   xRightEye = xCenter + xCenter*1/4;
