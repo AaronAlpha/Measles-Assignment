@@ -20,6 +20,13 @@ void setup() {
 void draw() {
 
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+  //
+  ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
+  ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
+  triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
+  line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);//Mouth
+  //
+  ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);
   
 }; // end draw
 
