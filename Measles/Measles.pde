@@ -7,7 +7,7 @@ int thack = 50;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
 color resetWhite = #FFFFFF, red = #FF0000; //this is not populated as population needs display(hence why unique)
-// color, is similar to and int declaration 
+// color, is similar to an int declaration 
 
 
 void setup() {
@@ -62,13 +62,12 @@ void setup() {
   //End Population - Mouth
   
   
-  
-  faceRadius = smallerDimension/2;
+  faceRadius = smallerDimension/2; //used to figure out the boudaries for where the measles can spawn
   //Population Measle
+  
   //End Population Measle
   
-  // the face ellipse is put here in the 'void setup' as to have the face drawn once, go to 'void draw' for explanation
- //must populate if first seeing variable behind IF
+  //the face ellipse is put here in the 'void setup' as to have the face drawn once, go to 'void draw' for explanation
   boolean nightMode = false;
   color backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
   backgroundColor = color(random(0, 255), random(0, 255), random(0, 255));
