@@ -5,6 +5,8 @@ float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRigh
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
+color resetWhite = #FFFFFF, red = #FF0000; //this is not populated as population needs display(hence why unique)
+// color, is similar to and int declaration 
 
 
 void setup() {
@@ -58,30 +60,38 @@ void setup() {
   yRightMouth = yCenter + yCenter*1/2;
   //End Population - Mouth
   
+  
+  
   faceRadius = smallerDimension/2;
   //Population Measle
   measleDiameter = smallerDimension*1/50;
   //End Population Measle
   
+  // the face ellipse is put here in the 'void setup' as to have the face drawn once, go to 'void draw' for explanation
+  background(color(random(0, 255), random(0, 255), random(0, 255)));
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+  //sequential programming
   
 }; // end setup
 
 void draw() {
-
-
+  // in void draw, the following code put here is being printed/drawn 60times per second
   //
+
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
   line(xCenterMouth, yCenterMouth, xRightMouth, yRightMouth);//Mouth 1
   line(xCenterMouth, yCenterMouth, xLeftMouth, yLeftMouth); //MOuth 2
-  
   //
   xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
   yMeasle = random(0, smallerDimension);
+  fill(red);
+  noStroke();
   ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);
+  stroke(1); //resets default  
+  fill(resetWhite);
   
 }; // end draw
 
