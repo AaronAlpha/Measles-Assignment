@@ -48,18 +48,12 @@ void setup() {
   
   
   //Population Mouth
-  //xLeftMouth = xCenter - xCenter*1/4;
-  //yLeftMouth = yCenter + yCenter*1/2;
-  //xRightMouth = xCenter + xCenter*1/4;
-  //yRightMouth = yCenter + yCenter*1/2;
-  
-  yCenterMouth = yCenter - yCenter*1/2;
+  xLeftMouth = xCenter - xCenter*1/4;
+  yLeftMouth = yCenter + yCenter*1/2;
   xRightMouth = xCenter + xCenter*1/4;
   yRightMouth = yCenter + yCenter*1/2;
   
-  yCenterMouth = yCenter - yCenter*1/2;
-  xLeftMouth = xCenter - xCenter*1/4;
-  yLeftMouth = yCenter + yCenter*1/2;
+  
   //End Population - Mouth
   
   
@@ -91,8 +85,6 @@ void draw() {
   strokeCap(ROUND); //Default is ROUND; PROJECT is another option  //sets style for line endings, 3options: SQUARE, ROUND, EXTENDED(all caps)
   strokeWeight(thack);//sets width of stroke used for lines, points and borders of shapes; width units: pixel;(option 1 is default)
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
-  //line(xCenterMouth, yCenterMouth, xRightMouth, yRightMouth);//Mouth 1
-  //line(xCenterMouth, yCenterMouth, xLeftMouth, yLeftMouth); //MOuth 2
   strokeWeight(1);
 
 
