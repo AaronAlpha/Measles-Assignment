@@ -111,12 +111,7 @@ void draw() {
 
 
 void keyPressed() {  
-  // this means that night mode will be on meaning 
-  if (nightMode == false) {//Nightmode switch
-    nightMode = true ;  
-  } else {
-    nightMode = false;
-  };
+  // this means that night mode will be on meaning `
   if (keyPressed == true) {
     backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
     background(backgroundColor);
@@ -133,12 +128,6 @@ void mousePressed() {
   //Hence there are 4 ways to code a mouse button press:  
   
   if (mouseButton == LEFT) {
-    if (nightMode == false) {//Nightmode switch
-    nightMode = true ;  
-  } else {
-    nightMode = false;
-  };
-    
     backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
     background(backgroundColor);
     ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
