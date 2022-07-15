@@ -3,7 +3,7 @@ float xFace, yFace, widthDiamterFace, heightDiamterFace, faceRadius, smallerDime
 float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
 float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril;
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
-int thack = 50;
+int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
 color resetWhite = #FFFFFF, red = #FF0000; //this is not populated as population needs display(hence why unique)
@@ -48,19 +48,18 @@ void setup() {
   
   
   //Population Mouth
-  xLeftMouth = xCenter - xCenter*1/4;
-  yLeftMouth = yCenter + yCenter*1/2;
-  xRightMouth = xCenter + xCenter*1/4;
-  yRightMouth = yCenter + yCenter*1/2;
-  
-  //xCenterMouth = xCenter - xCenter*1/4;
-  //yCenterMouth = yCenter + yCenter*1/2;
-  //xRightMouth = xCenter + xCenter*1/4;
-  //yRightMouth = yCenter + yCenter*1/2;
   //xLeftMouth = xCenter - xCenter*1/4;
   //yLeftMouth = yCenter + yCenter*1/2;
   //xRightMouth = xCenter + xCenter*1/4;
   //yRightMouth = yCenter + yCenter*1/2;
+  
+  yCenterMouth = yCenter - yCenter*1/2;
+  xRightMouth = xCenter + xCenter*1/4;
+  yRightMouth = yCenter + yCenter*1/2;
+  
+  yCenterMouth = yCenter - yCenter*1/2;
+  xLeftMouth = xCenter - xCenter*1/4;
+  yLeftMouth = yCenter + yCenter*1/2;
   //End Population - Mouth
   
   
@@ -69,6 +68,8 @@ void setup() {
   
   //End Population Measle
   
+  
+  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
   
   
 
@@ -103,7 +104,7 @@ void draw() {
   measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
   ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);//creating meassle
   stroke(1); //resets default //setting for how thick the measle outline will be 
-  fill(resetWhite);//
+  fill(resetWhite);
   
   
 }; // end draw
