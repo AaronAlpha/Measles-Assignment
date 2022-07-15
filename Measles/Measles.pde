@@ -8,6 +8,8 @@ float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
 color resetWhite = #FFFFFF, red = #FF0000; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
+boolean nightMode = false;
+color backgroundColor;
 
 
 void setup() {
@@ -67,15 +69,14 @@ void setup() {
   
   //End Population Measle
   
-  //the face ellipse is put here in the 'void setup' as to have the face drawn once, go to 'void draw' for explanation
-  boolean nightMode = false;
-  color backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+  
+  
 
-  background(backgroundColor);
-  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
-  //sequential programming
+  //sequential programming - explicitly waits in-line, for the expected events in various places in the execution path.
   
 }; // end setup
+
+
 
 void draw() {
   // in void draw, the following code put here is being printed/drawn 60times per second, hence if there was something
@@ -83,29 +84,83 @@ void draw() {
 
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
+  
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
-  strokeCap(SQUARE); //Default is ROUND; PROJECT is another option
-  strokeWeight(thack);
+  
+  strokeCap(ROUND); //Default is ROUND; PROJECT is another option  //sets style for line endings, 3options: SQUARE, ROUND, EXTENDED(all caps)
+  strokeWeight(thack);//sets width of stroke used for lines, points and borders of shapes; width units: pixel;(option 1 is default)
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
   //line(xCenterMouth, yCenterMouth, xRightMouth, yRightMouth);//Mouth 1
   //line(xCenterMouth, yCenterMouth, xLeftMouth, yLeftMouth); //MOuth 2
   strokeWeight(1);
+
+
   //
   xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
   yMeasle = random(0, smallerDimension);
-  fill(red);
-  noStroke();
-  measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);
-  ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);
-  stroke(1); //resets default  
-  fill(resetWhite);
+  fill(red);//color of measle
+  noStroke();//removes the outlining for measle
+  measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
+  ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);//creating meassle
+  stroke(1); //resets default //setting for how thick the measle outline will be 
+  fill(resetWhite);//
+  
   
 }; // end draw
 
-void keyPressed() {
+
+
+void keyPressed() {  
+  if (keyPressed == true) {
+    backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+    background(backgroundColor);
+    ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);    
+  }
+  
 };// end keyPressed
 
+
+
+
+
 void mousePressed() {
+  //Hence there are 4 ways to code a mouse button press:  
+  
+  if (mouseButton == LEFT) {
+    backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+    background(backgroundColor);
+    ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+  }; //End left mouse button; 1st way to code mouse button
+  
+  //if (mouseButton == RIGHT) {
+  //  backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+  //  background(backgroundColor);
+  //  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+  //}; //End right mouse button; 2nd way to code mouse button
+  
+   //Note: Mouse wheel is also avaliable
+   //if (mouseButton == WHEEL) {} //End mouse wheel; 3rd way to code mouse button
+  
+  
+  
+  /*
+  //when any button pressed something going to happen with this listener
+  //4th way to code mouse button
+  if (nightMode == false) {//Nightmode switch
+    nightMode = true ;  
+  } else {
+    nightMode = false;
+  }; //End nightmode swith  
+  //
+  backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+
+  background(backgroundColor);
+  
+    //the face ellipse is put here in the 'void setup' as to have the face drawn once, go to 'void draw' for explanation
+  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+  
+  */
+  
 };// end mousePressed
 
 // End MAIN program
