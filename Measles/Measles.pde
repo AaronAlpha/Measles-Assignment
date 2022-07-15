@@ -59,12 +59,13 @@ void setup() {
   yRightMouth = yCenter + yCenter*1/2;
   //End Population - Mouth
   
-  
-  ////Population Measle
-  //xMeasle = ;
-  //yMeasle = ;
-  //measleDiameter;
-  ////End Population Measle
+  float faceRadius = smallerDimension/2
+  //Population Measle
+
+  xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
+  yMeasle = random(0, height);
+  measleDiameter = smallerDimension*1/50;
+  //End Population Measle
 }; // end setup
 
 void draw() {
@@ -76,7 +77,7 @@ void draw() {
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
   line(xCenterMouth, yCenterMouth, xRightMouth, yRightMouth);//Mouth 1
-  line(x)
+  line(xCenterMouth, yCenterMouth, xLeftMouth, yLeftMouth); //MOuth 2
   
   //
   ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);
