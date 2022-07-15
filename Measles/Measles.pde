@@ -70,7 +70,7 @@ void setup() {
   //the face ellipse is put here in the 'void setup' as to have the face drawn once, go to 'void draw' for explanation
   boolean nightMode = false;
   color backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
-  backgroundColor = color(random(0, 255), random(0, 255), random(0, 255));
+
   background(backgroundColor);
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
   //sequential programming
