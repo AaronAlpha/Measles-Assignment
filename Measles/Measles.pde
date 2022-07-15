@@ -2,7 +2,7 @@
 float xFace, yFace, widthDiamterFace, heightDiamterFace;
 float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
 float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril;
-float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth;
+float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
 float xMeasle, yMeasle, measleDiameter;
 
 
@@ -11,7 +11,6 @@ void setup() {
   float xCenter = width/2;
   float yCenter = height/2;
   size(800, 600); // Landscape
-  
   
   
   //Population - Face
@@ -49,6 +48,15 @@ void setup() {
   yLeftMouth = yCenter + yCenter*1/2;
   xRightMouth = xCenter + xCenter*1/4;
   yRightMouth = yCenter + yCenter*1/2;
+  
+  xCenterMouth = xCenter - xCenter*1/4;
+  yCenterMouth = yCenter + yCenter*1/2;
+  xRightMouth = xCenter + xCenter*1/4;
+  yRightMouth = yCenter + yCenter*1/2;
+  xLeftMouth = xCenter - xCenter*1/4;
+  yLeftMouth = yCenter + yCenter*1/2;
+  xRightMouth = xCenter + xCenter*1/4;
+  yRightMouth = yCenter + yCenter*1/2;
   //End Population - Mouth
   
   
@@ -57,9 +65,6 @@ void setup() {
   //yMeasle = ;
   //measleDiameter;
   ////End Population Measle
-  
-
-  
 }; // end setup
 
 void draw() {
@@ -69,7 +74,10 @@ void draw() {
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
-  line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);//Mouth
+  line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
+  line(xCenterMouth, yCenterMouth, xRightMouth, yRightMouth);//Mouth 1
+  line(x)
+  
   //
   ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);
   
