@@ -3,6 +3,7 @@ float xFace, yFace, widthDiamterFace, heightDiamterFace, faceRadius, smallerDime
 float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
 float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril;
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
+int thack = 50;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
 color resetWhite = #FFFFFF, red = #FF0000; //this is not populated as population needs display(hence why unique)
@@ -50,45 +51,52 @@ void setup() {
   xRightMouth = xCenter + xCenter*1/4;
   yRightMouth = yCenter + yCenter*1/2;
   
-  xCenterMouth = xCenter - xCenter*1/4;
-  yCenterMouth = yCenter + yCenter*1/2;
-  xRightMouth = xCenter + xCenter*1/4;
-  yRightMouth = yCenter + yCenter*1/2;
-  xLeftMouth = xCenter - xCenter*1/4;
-  yLeftMouth = yCenter + yCenter*1/2;
-  xRightMouth = xCenter + xCenter*1/4;
-  yRightMouth = yCenter + yCenter*1/2;
+  //xCenterMouth = xCenter - xCenter*1/4;
+  //yCenterMouth = yCenter + yCenter*1/2;
+  //xRightMouth = xCenter + xCenter*1/4;
+  //yRightMouth = yCenter + yCenter*1/2;
+  //xLeftMouth = xCenter - xCenter*1/4;
+  //yLeftMouth = yCenter + yCenter*1/2;
+  //xRightMouth = xCenter + xCenter*1/4;
+  //yRightMouth = yCenter + yCenter*1/2;
   //End Population - Mouth
   
   
   
   faceRadius = smallerDimension/2;
   //Population Measle
-  measleDiameter = smallerDimension*1/50;
   //End Population Measle
   
   // the face ellipse is put here in the 'void setup' as to have the face drawn once, go to 'void draw' for explanation
-  background(color(random(0, 255), random(0, 255), random(0, 255)));
+ //must populate if first seeing variable behind IF
+  boolean nightMode = false;
+  color backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+  backgroundColor = color(random(0, 255), random(0, 255), random(0, 255));
+  background(backgroundColor);
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
   //sequential programming
   
 }; // end setup
 
 void draw() {
-  // in void draw, the following code put here is being printed/drawn 60times per second
+  // in void draw, the following code put here is being printed/drawn 60times per second, hence if there was something
   //
 
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
+  strokeCap(SQUARE); //Default is ROUND; PROJECT is another option
+  strokeWeight(thack);
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
-  line(xCenterMouth, yCenterMouth, xRightMouth, yRightMouth);//Mouth 1
-  line(xCenterMouth, yCenterMouth, xLeftMouth, yLeftMouth); //MOuth 2
+  //line(xCenterMouth, yCenterMouth, xRightMouth, yRightMouth);//Mouth 1
+  //line(xCenterMouth, yCenterMouth, xLeftMouth, yLeftMouth); //MOuth 2
+  strokeWeight(1);
   //
   xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
   yMeasle = random(0, smallerDimension);
   fill(red);
   noStroke();
+  measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);
   ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);
   stroke(1); //resets default  
   fill(resetWhite);
