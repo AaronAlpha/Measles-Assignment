@@ -108,13 +108,13 @@ void draw() {
 void keyPressed() {  
   // this means that night mode will be on meaning `
   if (keyPressed) {
-    if(key == 'n' || key == 'N') {
+    if(key == 'n' || key == 'N') {// 'n/N' denotes 'nightmode'(i.e. 'N = N ight'; no blue color)
       backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
       //this is when nightMode is ON, :. no bluelight
       background(backgroundColor);
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);    
     }
-    if (key == 'b'  || key == 'B') {
+    if (key == 'b'  || key == 'B') {// 'b/B' denotes 'no nightmode'(i.e. 'B = B lue'; blue color is also present)
       backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
       //this is when nightMode is OFF, :. there is bluelight
       background(backgroundColor);
@@ -124,7 +124,7 @@ void keyPressed() {
   
   
   if (keyPressed) {
-    if(key == 'e' || key == 'E') {
+    if(key == 'e' || key == 'E') { // 'e/E' denotes 'exit mode'(i.e. 'E = E xit')
       exit();
     }
   };
