@@ -1,22 +1,21 @@
 //Global Variables
-float xFace, yFace, widthDiamterFace, heightDiamterFace;
+float xFace, yFace, widthDiamterFace, heightDiamterFace, faceRadius, smallerDimension;
 float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
 float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril;
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
 float xMeasle, yMeasle, measleDiameter;
+float xCenter, yCenter;
 
 
 void setup() {
   //Canvas will be added in later
-  float xCenter = width/2;
-  float yCenter = height/2;
+  xCenter = width/2;
+  yCenter = height/2;
   size(800, 600); // Landscape
-  
   
   //Population - Face
   xFace = xCenter ;
   yFace = yCenter ;
-  float smallerDimension;
   if (width > height) {smallerDimension = height;
   } else {smallerDimension = width;}
   widthDiamterFace =  smallerDimension;
@@ -59,18 +58,18 @@ void setup() {
   yRightMouth = yCenter + yCenter*1/2;
   //End Population - Mouth
   
-  float faceRadius = smallerDimension/2
+  faceRadius = smallerDimension/2;
   //Population Measle
-
-  xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
-  yMeasle = random(0, height);
   measleDiameter = smallerDimension*1/50;
   //End Population Measle
+  
+  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+  
 }; // end setup
 
 void draw() {
 
-  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+
   //
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
@@ -80,6 +79,8 @@ void draw() {
   line(xCenterMouth, yCenterMouth, xLeftMouth, yLeftMouth); //MOuth 2
   
   //
+  xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
+  yMeasle = random(0, smallerDimension);
   ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);
   
 }; // end draw
