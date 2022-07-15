@@ -8,7 +8,7 @@ float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
 color resetWhite = #FFFFFF, red = #FF0000; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
-boolean nightMode = false;
+boolean nightMode = false; //means night mode is off(bluelight on)
 color backgroundColor;
 
 
@@ -110,15 +110,34 @@ void draw() {
 
 
 
+
+
 void keyPressed() {  
   // this means that night mode will be on meaning `
-  if (keyPressed == true) {
-    backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
-    background(backgroundColor);
-    ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);    
+  if (keyPressed) {
+    if(key == 'n' || key == 'N') {
+      backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+      //this is when nightMode is ON, :. no bluelight
+      background(backgroundColor);
+      ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);    
+    }
+    if (key == 'b'  || key == 'B') {
+      backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+      //this is when nightMode is OFF, :. there is bluelight
+      background(backgroundColor);
+      ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+    }
   }
   
+  
+  if (keyPressed) {
+    if(key == 'e' || key == 'E') {
+      exit();
+    }
+  };
+  
 };// end keyPressed
+
 
 
 
@@ -127,11 +146,14 @@ void keyPressed() {
 void mousePressed() {
   //Hence there are 4 ways to code a mouse button press:  
   
-  if (mouseButton == LEFT) {
-    backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
-    background(backgroundColor);
-    ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
-  }; //End left mouse button; 1st way to code mouse button
+  //if (mouseButton == LEFT) {
+  //  backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
+  //  //this is when nightMode is OFF, :. there is bluelight
+  //  background(backgroundColor);
+  //  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+  //}; //End left mouse button; 1st way to code mouse button
+  
+  
   
   //if (mouseButton == RIGHT) {
   //  backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
@@ -139,8 +161,10 @@ void mousePressed() {
   //  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
   //}; //End right mouse button; 2nd way to code mouse button
   
-   //Note: Mouse wheel is also avaliable
-   //if (mouseButton == WHEEL) {} //End mouse wheel; 3rd way to code mouse button
+  //Note: Mouse wheel is also avaliable
+  //if (mouseButton == WHEEL) {} //End mouse wheel; 3rd way to code mouse button
+  
+  
   
   
   
@@ -161,6 +185,10 @@ void mousePressed() {
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
   
   */
+  
+  
+  
+  
   
 };// end mousePressed
 
