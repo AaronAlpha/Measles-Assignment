@@ -3,6 +3,8 @@ float xFace, yFace, widthDiamterFace, heightDiamterFace, faceRadius, smallerDime
 float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
 float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril;
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
+float leftLeftCatEar, rightLeftCatEar, tipLeftCatEar;
+float leftRightCatEar, rightRightCatEar, tipLeaftCatEar;
 int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
@@ -52,8 +54,6 @@ void setup() {
   yLeftMouth = yCenter + yCenter*1/2;
   xRightMouth = xCenter + xCenter*1/4;
   yRightMouth = yCenter + yCenter*1/2;
-  
-  
   //End Population - Mouth
   
   
@@ -62,7 +62,11 @@ void setup() {
   
   //End Population Measle
   
-  rect(0, 0, 800, 300);
+  
+  
+  
+  
+
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
   
   
@@ -76,7 +80,7 @@ void setup() {
 void draw() {
   // in void draw, the following code put here is being printed/drawn 60times per second, hence if there was something
   //
-
+  
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
   
@@ -114,8 +118,6 @@ void keyPressed() {
       backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
       //this is when nightMode is ON, :. no bluelight
       background(backgroundColor);
-      fill(red);
-      rect(0, 0, 800, 300);
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
     }
     if (key == 'b'  || key == 'B') {// 'b/B' denotes 'no nightmode'(i.e. 'B = B lue'; blue color is also present)
