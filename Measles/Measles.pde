@@ -49,7 +49,7 @@ void setup() {
   //End Population - Nose
   
   
-  //Population Mouth
+  //Population - Mouth
   xLeftMouth = xCenter - xCenter*1/4;
   yLeftMouth = yCenter + yCenter*1/2;
   xRightMouth = xCenter + xCenter*1/4;
@@ -63,6 +63,13 @@ void setup() {
   //End Population Measle
   
   
+  //Population - Cat Ears 
+  leftRightCatEar = ;
+  rightRightCatEar =;
+  tipLeaftCatEar = ;
+  leftLeftCatEar =;
+  rightLeftCatEar =;
+  tipLeftCatEar = ;
   
   
   
