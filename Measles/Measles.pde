@@ -24,7 +24,7 @@ void setup() {
   //Population - Face
   xFace = xCenter ;
   yFace = yCenter ;
-  if (width > height) {smallerDimension = height;
+  if (width > height) {smallerDimension = height; //trying to make sure that the face fits in the provided canvas dimensions
   } else {smallerDimension = width;}
   widthDiamterFace =  smallerDimension;
   heightDiamterFace = smallerDimension;
@@ -65,24 +65,24 @@ void setup() {
   
   
   //Population - Cat Ears 
-  xbottomrightRightCatEar = xCenter + faceRadius;
-  ybottomrightRightCatEar = yCenter - yCenter*1/4;
+  xbottomrightRightCatEar = xCenter;
+  ybottomrightRightCatEar = 0;
   xtoprightRightCatEar = xCenter + faceRadius;
-  ytoprightRightCatEar = 600;
+  ytoprightRightCatEar = 0;
   xcenterRightCatEar = xCenter + faceRadius;
-  ycenterRightCatEar = width;
+  ycenterRightCatEar = yCenter;
   
-  xbottomleftLeftCatEar = xCenter - faceRadius;
-  ybottomleftLeftCatEar = yCenter + yCenter*1/4;
+  xbottomleftLeftCatEar = xCenter;
+  ybottomleftLeftCatEar = 0;
   xtopleftLeftCatEar = xCenter - faceRadius;
-  ytopleftLeftCatEar = 600;
+  ytopleftLeftCatEar = 0;
   xcenterLeftCatEar = xCenter - faceRadius;
-  ycenterLeftCatEar = width;
+  ycenterLeftCatEar = yCenter;
   
   
   
   
-  //ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
+  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
   
   
   
@@ -119,7 +119,7 @@ void draw() {
   //stroke(1); //resets default //setting for how thick the measle outline will be 
   //fill(resetWhite);
   
-  triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, ytoprightRightCatEar, xtoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
+  triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
   triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
   
   
