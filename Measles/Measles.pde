@@ -6,7 +6,7 @@ float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMou
 int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
-color resetWhite = #FFFFFF, red = #FF0000; //this is not populated as population needs display(hence why unique)
+color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
 boolean nightMode = false; //means night mode is off(bluelight on)
 color backgroundColor;
@@ -62,7 +62,7 @@ void setup() {
   
   //End Population Measle
   
-  
+  rect(0, 0, 800, 300);
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
   
   
@@ -86,6 +86,7 @@ void draw() {
   strokeWeight(thack);//sets width of stroke used for lines, points and borders of shapes; width units: pixel;(option 1 is default)
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
   strokeWeight(1);
+  
 
 
   //
@@ -97,6 +98,7 @@ void draw() {
   ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);//creating meassle
   stroke(1); //resets default //setting for how thick the measle outline will be 
   fill(resetWhite);
+  
   
   
 }; // end draw
@@ -112,7 +114,9 @@ void keyPressed() {
       backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
       //this is when nightMode is ON, :. no bluelight
       background(backgroundColor);
-      ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);    
+      fill(red);
+      rect(0, 0, 800, 300);
+      ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
     }
     if (key == 'b'  || key == 'B') {// 'b/B' denotes 'no nightmode'(i.e. 'B = B lue'; blue color is also present)
       backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
