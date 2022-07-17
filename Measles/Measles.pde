@@ -72,12 +72,12 @@ void setup() {
   xcenterRightCatEar = xCenter + faceRadius;
   ycenterRightCatEar = yCenter;
   
-  xbottomleftLeftCatEar = xCenter;
-  ybottomleftLeftCatEar = 0;
+  xbottomleftLeftCatEar = xCenter - faceRadius;
+  ybottomleftLeftCatEar = yCenter - yCenter*1/5;
   xtopleftLeftCatEar = xCenter - faceRadius;
   ytopleftLeftCatEar = 0;
-  xcenterLeftCatEar = xCenter - faceRadius;
-  ycenterLeftCatEar = yCenter;
+  xcenterLeftCatEar = xCenter - xCenter*1/5;
+  ycenterLeftCatEar = 0;
   
   
   
@@ -110,18 +110,18 @@ void draw() {
 
 
   //
-  //xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
-  //yMeasle = random(0, smallerDimension);
-  //fill(red);//color of measle
-  //noStroke();//removes the outlining for measle
-  //measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
-  //ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);//creating meassle
-  //stroke(1); //resets default //setting for how thick the measle outline will be 
-  //fill(resetWhite);
+  xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
+  yMeasle = random(0, smallerDimension);
+  fill(red);//color of measle
+  noStroke();//removes the outlining for measle
+  measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
+  ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);//creating meassle
+  stroke(1); //resets default //setting for how thick the measle outline will be 
+  fill(resetWhite);
   
   triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
   triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
-  
+
   
   
 }; // end draw
