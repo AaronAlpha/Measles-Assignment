@@ -138,12 +138,16 @@ void keyPressed() {
       //this is when nightMode is ON, :. no bluelight
       background(backgroundColor);
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+      triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
+      triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
     }
     if (key == 'b'  || key == 'B') {// 'b/B' denotes 'no nightmode'(i.e. 'B = B lue'; blue color is also present)
       backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
       //this is when nightMode is OFF, :. there is bluelight
       background(backgroundColor);
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
+      triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
+      triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
     }
   }
   
