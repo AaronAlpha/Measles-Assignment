@@ -65,18 +65,18 @@ void setup() {
   
   
   //Population - Cat Ears 
-  xbottomrightRightCatEar = xCenter;
-  ybottomrightRightCatEar = 0;
+  xbottomrightRightCatEar = xCenter + faceRadius;
+  ybottomrightRightCatEar = yCenter;
   xtoprightRightCatEar = xCenter + faceRadius;
   ytoprightRightCatEar = 0;
-  xcenterRightCatEar = xCenter + faceRadius;
-  ycenterRightCatEar = yCenter;
+  xcenterRightCatEar = xCenter;
+  ycenterRightCatEar = 0;
   
   xbottomleftLeftCatEar = xCenter - faceRadius;
-  ybottomleftLeftCatEar = yCenter - yCenter*1/5;
+  ybottomleftLeftCatEar = yCenter;
   xtopleftLeftCatEar = xCenter - faceRadius;
   ytopleftLeftCatEar = 0;
-  xcenterLeftCatEar = xCenter - xCenter*1/5;
+  xcenterLeftCatEar = xCenter ;
   ycenterLeftCatEar = 0;
   
   
