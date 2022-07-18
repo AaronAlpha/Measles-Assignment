@@ -86,7 +86,7 @@ void setup() {
   
   
   
-  //rect(xCenter - faceRadius, 0, 2*faceRadius, smallerDimension);
+  //rect(xCenter - faceRadius, 0, 2*faceRadius, smallerDimension); //visual representation for the 'virtual box' for all the measles to lie in/on
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
   
   
