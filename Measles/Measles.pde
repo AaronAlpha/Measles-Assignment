@@ -86,7 +86,7 @@ void setup() {
   
   
   
-  
+  //rect(xCenter - faceRadius, 0, 2*faceRadius, smallerDimension);
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
   
   
@@ -117,6 +117,7 @@ void draw() {
   //
   xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
   yMeasle = random(0, smallerDimension);
+
   fill(red);//color of measle
   noStroke();//removes the outlining for measle
   measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
