@@ -78,6 +78,11 @@ void setup() {
   ytopleftLeftCatEar = 0;
   xcenterLeftCatEar = xCenter ;
   ycenterLeftCatEar = 0;
+  //End Population Cat Ears
+  
+  
+  //Population Cat Whiskers
+  
   
   
   
@@ -121,6 +126,10 @@ void draw() {
   
   triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
   triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
+  //line(xCenterPoint, yCenterPoint, );
+  //line(, );
+  //line(, );
+  //line(, );
 
   
   
