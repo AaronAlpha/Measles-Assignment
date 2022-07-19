@@ -9,7 +9,7 @@ float xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, yt
 int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
-color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00, black = #000000; //this is not populated as population needs display(hence why unique)
+color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00, black = #000000, pink = #FA86EF; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
 boolean nightMode = false; //means night mode is off(bluelight on)
 color backgroundColor;
@@ -114,10 +114,11 @@ void setup() {
 void draw() {
   // in void draw, the following code put here is being printed/drawn 60times per second, hence if there was something
   //
-  
+  fill(resetWhite);
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
   
+  fill(pink);
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
   
   strokeCap(ROUND); //Default is ROUND; PROJECT is another option  //sets style for line endings, 3options: SQUARE, ROUND, EXTENDED(all caps)
@@ -161,6 +162,7 @@ void keyPressed() {
       backgroundColor = (nightMode == false) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
       //this is when nightMode is ON, :. no bluelight
       background(backgroundColor);
+      fill(resetWhite);
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
       triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
       triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
@@ -169,6 +171,7 @@ void keyPressed() {
       backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
       //this is when nightMode is OFF, :. there is bluelight
       background(backgroundColor);
+      fill(resetWhite);
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
       triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
       triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
