@@ -4,12 +4,15 @@ float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
 float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril;
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
 float xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar;
+float xbottomleftLeftCatEarInside, ybottomleftLeftCatEarInside, xtopleftLeftCatEarInside, ytopleftLeftCatEarInside, xcenterLeftCatEarInside, ycenterLeftCatEarInside;
 float xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar;
+float xbottomrightRightCatEarInside, ybottomrightRightCatEarInside, xtoprightRightCatEarInside, ytoprightRightCatEarInside, xcenterRightCatEarInside, ycenterRightCatEarInside;
+float xStar, yStar, starDiameter;
 
 int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
-color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00, black = #000000, pink = #FA86EF; //this is not populated as population needs display(hence why unique)
+color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00, black = #000000, pink = #FA86EF, gold = #FAF360; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
 boolean nightMode = false; //means night mode is off(bluelight on)
 color backgroundColor;
@@ -85,21 +88,44 @@ void setup() {
   //End Population Cat Ears
   
   
+  //Population - inside of Cat Ears
+  fill(pink);
+  xbottomrightRightCatEarInside = xCenter + faceRadius*3/4;
+  ybottomrightRightCatEarInside = yCenter - yCenter*1/4;
+  xtoprightRightCatEarInside = xCenter + faceRadius*3/4;
+  ytoprightRightCatEarInside = yCenter - yCenter*3/4;
+  xcenterRightCatEarInside = xCenter + xCenter*10/53 ;
+  ycenterRightCatEarInside = yCenter - yCenter*3/4;
+  
+  xbottomleftLeftCatEarInside = xCenter - faceRadius*3/4;
+  ybottomleftLeftCatEarInside = yCenter - yCenter*1/4;
+  xtopleftLeftCatEarInside = xCenter - faceRadius*3/4;
+  ytopleftLeftCatEarInside = yCenter - yCenter*3/4;
+  xcenterLeftCatEarInside = xCenter - xCenter*10/53;
+  ycenterLeftCatEarInside = yCenter - yCenter*3/4;
+ 
+  //End Population inside of Cat Ears
+  
+  
+  
+  
+  
   //Population Cat Whiskers
   xCenterPoint = xCenter;
   yCenterPoint = yCenter;
   xRightTop =  xCenter + xCenter*2/3;
-  yRightTop = 262.5;
+  yRightTop = 262.5; //have to show formula
   xRightBottom = xCenter + xCenter*2/3;
-  yRightBottom = 337.5;
+  yRightBottom = 337.5; //have to show the formula
   xLeftTop = xCenter - xCenter*2/3;
-  yLeftTop = 262.5;
+  yLeftTop = 262.5; //have to show formula
   xLeftBottom = xCenter - xCenter*2/3;
-  yLeftBottom = 337.5;
+  yLeftBottom = 337.5; //have to show formula
   
   
   
   //rect(xCenter - faceRadius, 0, 2*faceRadius, smallerDimension); //visual representation for the 'virtual box' for all the measles to lie in/on
+  fill(resetWhite);
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
   
   
@@ -114,13 +140,24 @@ void setup() {
 void draw() {
   // in void draw, the following code put here is being printed/drawn 60times per second, hence if there was something
   //
+  xStar = random(0, width);
+  yStar = random(0, height);
+
+  fill(gold);//color of measle
+  noStroke();//removes the outlining for measle
+  starDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
+  ellipse(xStar, yStar, measleDiameter, measleDiameter);//creating meassle
+  stroke(1); //resets default //setting for how thick the measle outline will be 
+  fill(resetWhite);
+  
+  
   fill(resetWhite);
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
   
   fill(pink);
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
-  
+  fill(resetWhite);
   strokeCap(ROUND); //Default is ROUND; PROJECT is another option  //sets style for line endings, 3options: SQUARE, ROUND, EXTENDED(all caps)
   strokeWeight(thack);//sets width of stroke used for lines, points and borders of shapes; width units: pixel;(option 1 is default)
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
@@ -129,6 +166,7 @@ void draw() {
 
 
   //
+  
   xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
   yMeasle = random(0, smallerDimension);
 
@@ -141,12 +179,16 @@ void draw() {
   
   triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
   triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
-  fill(black);
+  fill(pink);
+  triangle(xbottomrightRightCatEarInside, ybottomrightRightCatEarInside, xtoprightRightCatEarInside, ytoprightRightCatEarInside, xcenterRightCatEarInside, ycenterRightCatEarInside);
+  triangle(xbottomleftLeftCatEarInside, ybottomleftLeftCatEarInside, xtopleftLeftCatEarInside, ytopleftLeftCatEarInside, xcenterLeftCatEarInside, ycenterLeftCatEarInside);
+  
+
   line(xCenterPoint, yCenterPoint, xRightTop, yRightTop);
   line(xCenterPoint, yCenterPoint, xRightBottom, yRightBottom);
   line(xCenterPoint, yCenterPoint, xLeftTop, yLeftTop);
   line(xCenterPoint, yCenterPoint, xLeftBottom, yLeftBottom);
-
+  fill(resetWhite);
   
   
 }; // end draw
@@ -166,6 +208,10 @@ void keyPressed() {
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
       triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
       triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
+      fill(pink);
+      triangle(xbottomrightRightCatEarInside, ybottomrightRightCatEarInside, xtoprightRightCatEarInside, ytoprightRightCatEarInside, xcenterRightCatEarInside, ycenterRightCatEarInside);
+      triangle(xbottomleftLeftCatEarInside, ybottomleftLeftCatEarInside, xtopleftLeftCatEarInside, ytopleftLeftCatEarInside, xcenterLeftCatEarInside, ycenterLeftCatEarInside);
+      fill(resetWhite);
     }
     if (key == 'b'  || key == 'B') {// 'b/B' denotes 'no nightmode'(i.e. 'B = B lue'; blue color is also present)
       backgroundColor = (nightMode == true) ? color(random(0, 255), random(0, 255), 0): color(random(0, 255), random(0, 255), random(0, 255)); //Ternary operator is similar to an if else
@@ -175,6 +221,10 @@ void keyPressed() {
       ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace);
       triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
       triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
+      fill(pink);
+      triangle(xbottomrightRightCatEarInside, ybottomrightRightCatEarInside, xtoprightRightCatEarInside, ytoprightRightCatEarInside, xcenterRightCatEarInside, ycenterRightCatEarInside);
+      triangle(xbottomleftLeftCatEarInside, ybottomleftLeftCatEarInside, xtopleftLeftCatEarInside, ytopleftLeftCatEarInside, xcenterLeftCatEarInside, ycenterLeftCatEarInside);
+      fill(resetWhite);
     }
   }
   
