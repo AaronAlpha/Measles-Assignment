@@ -9,10 +9,14 @@ float xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, yt
 int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
-color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00; //this is not populated as population needs display(hence why unique)
+color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00, black = #000000; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
 boolean nightMode = false; //means night mode is off(bluelight on)
 color backgroundColor;
+float xCenterPoint, yCenterPoint, xRightTop, yRightTop, xRightBottom, yRightBottom, xLeftTop, yLeftTop, xLeftBottom, yLeftBottom;
+
+
+
 
 
 void setup() {
@@ -82,7 +86,16 @@ void setup() {
   
   
   //Population Cat Whiskers
-  
+  xCenterPoint = xCenter;
+  yCenterPoint = yCenter;
+  xRightTop =  xCenter + xCenter*2/3;
+  yRightTop = 262.5;
+  xRightBottom = xCenter + xCenter*2/3;
+  yRightBottom = 337.5;
+  xLeftTop = xCenter - xCenter*2/3;
+  yLeftTop = 262.5;
+  xLeftBottom = xCenter - xCenter*2/3;
+  yLeftBottom = 337.5;
   
   
   
@@ -127,10 +140,11 @@ void draw() {
   
   triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
   triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
-  //line(xCenterPoint, yCenterPoint, );
-  //line(, );
-  //line(, );
-  //line(, );
+  fill(black);
+  line(xCenterPoint, yCenterPoint, xRightTop, yRightTop);
+  line(xCenterPoint, yCenterPoint, xRightBottom, yRightBottom);
+  line(xCenterPoint, yCenterPoint, xLeftTop, yLeftTop);
+  line(xCenterPoint, yCenterPoint, xLeftBottom, yLeftBottom);
 
   
   
