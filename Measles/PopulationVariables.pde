@@ -1,6 +1,6 @@
 float xFace, yFace, widthDiamterFace, heightDiamterFace, faceRadius, smallerDimension;
 float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
-float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril;
+float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNostril, xRightNostril, yRightNostril;
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth, xCenterMouth, yCenterMouth;
 float xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar;
 float xbottomleftLeftCatEarInside, ybottomleftLeftCatEarInside, xtopleftLeftCatEarInside, ytopleftLeftCatEarInside, xcenterLeftCatEarInside, ycenterLeftCatEarInside;
@@ -54,7 +54,7 @@ void populationVariables(){
   xNoseBridge = xCenter;
   yNoseBridge = yCenter - yCenter*1/8;
   xLeftNostril = xCenter + xCenter*1/6;
-  yLeftNOstril = yCenter + yCenter*1/8;
+  yLeftNostril = yCenter + yCenter*1/8;
   xRightNostril = xCenter - xCenter*1/6;
   yRightNostril = yCenter + yCenter*1/8;
   //End Population - Nose
