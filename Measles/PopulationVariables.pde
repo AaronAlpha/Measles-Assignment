@@ -9,7 +9,7 @@ float xbottomrightRightCatEarInside, ybottomrightRightCatEarInside, xtoprightRig
 float xStar1, yStar1, starDiameter;
 float xStar2, yStar2;
 float xSnow1, ySnow1, xSnow2, ySnow2, snowDiameter;
-color iceBlue = #60ECFA;
+color iceBlue = #60ECFA, skyBlue = #4785FC;
 
 
 int thack = 5;
@@ -111,13 +111,13 @@ void populationVariables(){
   xCenterPoint = xCenter;
   yCenterPoint = yCenter;
   xRightTop =  xCenter + xCenter*2/3;
-  yRightTop = 262.5; //have to show formula
+  yRightTop = yCenter - yCenter*1/5; //262.5 //have to show formula; note: 262.5!=yCenter - yCenter*1/5, it was just apprx. the value, but i calculated the actual maths using circles to find 262.5 and 337.5
   xRightBottom = xCenter + xCenter*2/3;
-  yRightBottom = 337.5; //have to show the formula
+  yRightBottom = yCenter + yCenter*1/5; //337.5; //have to show the formula
   xLeftTop = xCenter - xCenter*2/3;
-  yLeftTop = yCenter-yCenter*1/5; //262.5; //have to show formula
+  yLeftTop = yCenter - yCenter*1/5; //262.5; //have to show formula
   xLeftBottom = xCenter - xCenter*2/3;
-  yLeftBottom = 337.5; //have to show formula
+  yLeftBottom = yCenter + yCenter*1/5;//337.5; //have to show formula
   
   
   
