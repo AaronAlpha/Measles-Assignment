@@ -11,24 +11,29 @@ float xStar2, yStar2;
 float xSnow1, ySnow1, xSnow2, ySnow2, snowDiameter;
 color iceBlue = #60ECFA, skyBlue = #4785FC;
 
-
 int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
-color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00, black = #000000, pink = #FA86EF, gold = #FAF360; //this is not populated as population needs display(hence why unique)
+color resetWhite = #FFFFFF, red = #FF0000, green = #44F08A, black = #000000, lightblack = #393939, pink = #FA86EF, gold = #FAF360; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
 color brownorange = #F0B444;
 boolean nightMode = false; //means night mode is off(bluelight on)
 color backgroundColor;
 float xCenterPoint, yCenterPoint, xRightTop, yRightTop, xRightBottom, yRightBottom, xLeftTop, yLeftTop, xLeftBottom, yLeftBottom;
 
+float xRIghtEyePupil, yRightEyePupil, pupilDiameter, xLeftEyePupil, yLeftEyePupil;
+
+float xLeftEyePatch, yLeftEyePatch, patchDiameter;
+
+
+
 
 void populationVariables(){
   
     
   //Population - Face
-  xFace = xCenter ;
-  yFace = yCenter ;
+  xFace = xCenter;
+  yFace = yCenter;
   if (width > height) {smallerDimension = height; //trying to make sure that the face fits in the provided canvas dimensions
   } else {smallerDimension = width;}
   widthDiamterFace =  smallerDimension;
@@ -86,6 +91,7 @@ void populationVariables(){
   //End Population Cat Ears
   
   
+  
   //Population - inside of Cat Ears
   fill(pink);
   xbottomrightRightCatEarInside = xCenter + faceRadius*3/4;
@@ -119,8 +125,23 @@ void populationVariables(){
   yLeftTop = yCenter - yCenter*1/5; //262.5; //have to show formula
   xLeftBottom = xCenter - xCenter*2/3;
   yLeftBottom = yCenter + yCenter*1/5;//337.5; //have to show formula
+    //End Population of Cat Whiskers
   
   
+  //Population of Eye Pupils
+  xLeftEyePupil = xCenter - xCenter*1/4;
+  yLeftEyePupil = yCenter - yCenter*1/4;
+  pupilDiameter = smallerDimension*1/20;
+  xRIghtEyePupil = xCenter + xCenter*1/4;
+  yRightEyePupil = yCenter - yCenter*1/4;
+  //End Population of Eye Pupils
+  
+  
+  //Population of Eye patch
+  xLeftEyePatch = xCenter - xCenter*1/4;
+  yLeftEyePatch = yCenter - yCenter*1/4;
+  patchDiameter = smallerDimension*1/2;
+  //End Population of Eye patch
   
   
   
