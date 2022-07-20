@@ -1,4 +1,8 @@
 void drawMethod() {
+  
+  image(catCollar, xCenter-faceRadius, xCenter+faceRadius, picWidthAdjusted, picHeightAdjusted);
+  
+  
   xStar1 = random(0, xCenter-faceRadius);
   yStar1 = random(0, height);
   
