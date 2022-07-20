@@ -11,8 +11,16 @@ void setup() {
   yCenter = height/2;
   size(800, 600); // Landscape
     
-
+  populationVariables();
   //sequential programming - explicitly waits in-line, for the expected events in various places in the execution path.
+  
+  //rect(xCenter - faceRadius, 0, 2*faceRadius, smallerDimension); //visual representation for the 'virtual box' for all the measles to lie in/on
+  
+  
+  
+  fill(resetWhite);
+  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
+   
   
 }; // end setup
 
@@ -21,15 +29,35 @@ void setup() {
 void draw() {
   // in void draw, the following code put here is being printed/drawn 60times per second, hence if there was something
   //
-  xStar = random(0, width);
-  yStar = random(0, height);
-
-  fill(gold);//color of measle
+  xStar1 = random(0, xCenter-faceRadius);
+  yStar1 = random(0, height);
+  
+  xStar2 = random(xCenter+faceRadius, width);
+  yStar2 = random(0, height);
+  
+  fill(gold);//color of star
   noStroke();//removes the outlining for measle
   starDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
-  ellipse(xStar, yStar, measleDiameter, measleDiameter);//creating meassle
-  stroke(1); //resets default //setting for how thick the measle outline will be 
+  ellipse(xStar1, yStar1, starDiameter, starDiameter);//creating stars in background
+  ellipse(xStar2, yStar2, starDiameter, starDiameter);//creating stars in background
+  stroke(1); //resets default //setting for how thick the star outline will be 
   fill(resetWhite);
+  
+  
+  xSnow1 = random(0, xCenter-faceRadius);
+  ySnow1 = random(0, height);
+  
+  xSnow2 = random(xCenter+faceRadius, width);
+  ySnow2 = random(0, height);
+  
+  fill(iceBlue);
+  noStroke();
+  snowDiameter = random(smallerDimension*1/75, smallerDimension*1/90);
+  ellipse(xSnow1, ySnow1, snowDiameter, snowDiameter);
+  ellipse(xSnow2, ySnow2, snowDiameter, snowDiameter);
+  stroke(1);
+  fill(resetWhite);
+
   
   
   fill(resetWhite);

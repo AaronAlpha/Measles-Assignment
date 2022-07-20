@@ -6,7 +6,11 @@ float xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleft
 float xbottomleftLeftCatEarInside, ybottomleftLeftCatEarInside, xtopleftLeftCatEarInside, ytopleftLeftCatEarInside, xcenterLeftCatEarInside, ycenterLeftCatEarInside;
 float xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar;
 float xbottomrightRightCatEarInside, ybottomrightRightCatEarInside, xtoprightRightCatEarInside, ytoprightRightCatEarInside, xcenterRightCatEarInside, ycenterRightCatEarInside;
-float xStar, yStar, starDiameter;
+float xStar1, yStar1, starDiameter;
+float xStar2, yStar2;
+float xSnow1, ySnow1, xSnow2, ySnow2, snowDiameter;
+color iceBlue = #60ECFA;
+
 
 int thack = 5;
 float xMeasle, yMeasle, measleDiameter;
@@ -111,16 +115,13 @@ void populationVariables(){
   xRightBottom = xCenter + xCenter*2/3;
   yRightBottom = 337.5; //have to show the formula
   xLeftTop = xCenter - xCenter*2/3;
-  yLeftTop = 262.5; //have to show formula
+  yLeftTop = yCenter-yCenter*1/5; //262.5; //have to show formula
   xLeftBottom = xCenter - xCenter*2/3;
   yLeftBottom = 337.5; //have to show formula
   
   
   
-  //rect(xCenter - faceRadius, 0, 2*faceRadius, smallerDimension); //visual representation for the 'virtual box' for all the measles to lie in/on
-  fill(resetWhite);
-  ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
-   
+  
   
   
 }
