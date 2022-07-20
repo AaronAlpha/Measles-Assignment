@@ -9,7 +9,7 @@ Boolean widthLarger = false, heightLarger = false;
 void catCollarPic() {
   
   
-  catCollar = loadImage("../pink cat collar.jpg"); //Dimensions: width = 263; height = 192
+  catCollar = loadImage("C:/Users/aaron/OneDrive/Documents/GitHub/Measles-Assignment/Measles/pink cat collar.jpg"); //Dimensions: width = 263; height = 192
   int picWidth = 263;
   int picHeight = 192;
   if (picWidth >= picHeight) { //image dimension comparison
@@ -31,10 +31,10 @@ void catCollarPic() {
   if(heightLarger == true) imageHeightRatio = imageLargerDimension / imageLargerDimension; 
   
   //Population of Rect()  
-  imageX = xCenter-faceRadius; //smallest width of the image is the width*0
-  imageY = xCenter+faceRadius; //smallest height of the image is the height*0
-  imageWidth = width-1; //Canvas (0,0) means point doesnt match to rectangle, hence missing outline on two sides 
-  imageHeight = height-1;
+  imageX = xCenter-faceRadius;
+  imageY = yCenter; 
+  imageWidth = smallerDimension; 
+  imageHeight = height;
   
   //Adjuested image variables for Aspect Ratio: (entire image will be smaller due to aspect ratio)
   picWidthAdjusted = imageWidth * imageWidthRatio;

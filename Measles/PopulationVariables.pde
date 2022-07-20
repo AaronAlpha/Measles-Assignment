@@ -17,6 +17,7 @@ float xMeasle, yMeasle, measleDiameter;
 float xCenter, yCenter;
 color resetWhite = #FFFFFF, red = #FF0000, green = #00FF00, black = #000000, pink = #FA86EF, gold = #FAF360; //this is not populated as population needs display(hence why unique)
 // color, is similar to an int declaration 
+color brownorange = #F0B444;
 boolean nightMode = false; //means night mode is off(bluelight on)
 color backgroundColor;
 float xCenterPoint, yCenterPoint, xRightTop, yRightTop, xRightBottom, yRightBottom, xLeftTop, yLeftTop, xLeftBottom, yLeftBottom;

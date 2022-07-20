@@ -1,6 +1,6 @@
 void drawMethod() {
-  
-  image(catCollar, xCenter-faceRadius, xCenter+faceRadius, picWidthAdjusted, picHeightAdjusted);
+  //rect(imageX, imageY, imageWidth, imageHeight);
+  //image(catCollar, imageX, imageY, imageWidth, imageHeight); //picWidthAdjusted, picHeightAdjusted
   
   
   xStar1 = random(0, xCenter-faceRadius);
@@ -8,7 +8,7 @@ void drawMethod() {
   
   xStar2 = random(xCenter+faceRadius, width);
   yStar2 = random(0, height);
-  
+  //stars in background
   fill(gold);//color of star
   noStroke();//removes the outlining for measle
   starDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
@@ -18,12 +18,13 @@ void drawMethod() {
   fill(resetWhite);  
   
   
+  
   xSnow1 = random(0, xCenter-faceRadius);
   ySnow1 = random(0, height);
   
   xSnow2 = random(xCenter+faceRadius, width);
   ySnow2 = random(0, height);
-  
+  //snow in background 
   fill(iceBlue);
   noStroke();
   snowDiameter = random(smallerDimension*1/75, smallerDimension*1/90);
@@ -35,9 +36,20 @@ void drawMethod() {
   
   
   fill(resetWhite);
+  //brown patch aorund left eye
+  fill(brownorange);
+  //ellipse();
+  fill(resetWhite);
+  
+  //eyes + color
+  fill(black);
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter) ;//Left eye
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter) ;//Right eye
+  fill(resetWhite);
   
+  //pupils
+  
+  //nose + mouth +color
   fill(pink);
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNOstril, xRightNostril, yRightNostril);//Nose
   fill(resetWhite);
@@ -48,8 +60,7 @@ void drawMethod() {
   
 
 
-  //
-  
+  //measles
   xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
   yMeasle = random(0, smallerDimension);
 
@@ -60,6 +71,9 @@ void drawMethod() {
   stroke(1); //resets default //setting for how thick the measle outline will be 
   fill(resetWhite);
   
+  
+  //cat ears + color
+  fill(black);
   triangle(xbottomrightRightCatEar, ybottomrightRightCatEar, xtoprightRightCatEar, ytoprightRightCatEar, xcenterRightCatEar, ycenterRightCatEar);
   triangle(xbottomleftLeftCatEar, ybottomleftLeftCatEar, xtopleftLeftCatEar, ytopleftLeftCatEar, xcenterLeftCatEar, ycenterLeftCatEar);
   fill(pink);
@@ -67,6 +81,7 @@ void drawMethod() {
   triangle(xbottomleftLeftCatEarInside, ybottomleftLeftCatEarInside, xtopleftLeftCatEarInside, ytopleftLeftCatEarInside, xcenterLeftCatEarInside, ycenterLeftCatEarInside);
   
 
+  //whiskers
   line(xCenterPoint, yCenterPoint, xRightTop, yRightTop);
   line(xCenterPoint, yCenterPoint, xRightBottom, yRightBottom);
   line(xCenterPoint, yCenterPoint, xLeftTop, yLeftTop);
