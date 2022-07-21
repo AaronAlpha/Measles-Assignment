@@ -9,7 +9,7 @@ Boolean widthLarger = false, heightLarger = false;
 void catCollarPic() {
   
   
-  catCollar = loadImage("../pink cat collar.jpg"); //Dimensions: width = 263; height = 192
+  catCollar = loadImage("../cat collar clip art.jpg"); //Dimensions: width = 263; height = 192
   int picWidth = 263;
   int picHeight = 192;
   if (picWidth >= picHeight) { //image dimension comparison
@@ -32,7 +32,7 @@ void catCollarPic() {
   
   //Population of Rect()  
   imageX = xCenter-faceRadius;
-  imageY = yCenter; 
+  imageY = yCenter ; 
   imageWidth = smallerDimension; 
   imageHeight = height;
   

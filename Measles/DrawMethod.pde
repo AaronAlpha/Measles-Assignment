@@ -1,6 +1,7 @@
 void drawMethod() {
   //rect(imageX, imageY, imageWidth, imageHeight);
-
+  catCollarPic();
+  image(catCollar, imageX, imageY, picWidthAdjusted, picHeightAdjusted);
   
   
   xStar1 = random(0, xCenter-faceRadius);
@@ -36,6 +37,19 @@ void drawMethod() {
   //
 
   
+  //measles
+  xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
+  yMeasle = random(0, smallerDimension);
+
+  fill(red);//color of measle
+  noStroke();//removes the outlining for measle
+  measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
+  ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);//creating meassle
+  stroke(1); //resets default //setting for how thick the measle outline will be 
+  fill(resetWhite);
+  //
+  
+  
   
   fill(resetWhite);
   //brown patch aorund left eye
@@ -70,17 +84,7 @@ void drawMethod() {
   //
 
 
-  //measles
-  xMeasle = random(xCenter - faceRadius, xCenter + faceRadius);
-  yMeasle = random(0, smallerDimension);
-
-  fill(red);//color of measle
-  noStroke();//removes the outlining for measle
-  measleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//randomizes measle diameter
-  ellipse(xMeasle, yMeasle, measleDiameter, measleDiameter);//creating meassle
-  stroke(1); //resets default //setting for how thick the measle outline will be 
-  fill(resetWhite);
-  //
+ 
   
   
   //cat ears + color

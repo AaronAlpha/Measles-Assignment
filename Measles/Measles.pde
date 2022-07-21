@@ -21,7 +21,7 @@ void setup() {
   background(backgroundColor);
   fill(resetWhite);
   ellipse(xFace, yFace, widthDiamterFace, heightDiamterFace); 
-
+  
   
   
 }; // end setup
@@ -32,7 +32,7 @@ void draw() {
   // in void draw, the following code put here is being printed/drawn 60times per second, hence if there was something
   //
   drawMethod();
-
+  
   
 }; // end draw
 
