@@ -32,7 +32,7 @@ void catCollarPic() {
   
   //Population of Rect()  
   imageX = xCenter-faceRadius;
-  imageY = yCenter ; 
+  imageY = yCenter+20 ; //the best i can do to bring pic down without comprimising pic(althought thats happening a bit) and seeing a miniscle bit more of pic, all while maintaing aspect ratio.
   imageWidth = smallerDimension; 
   imageHeight = height;
   
