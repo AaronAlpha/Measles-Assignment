@@ -9,7 +9,7 @@ Boolean widthLarger = false, heightLarger = false;
 void catCollarPic() {
   
   
-  catCollar = loadImage("C:/Users/aaron/OneDrive/Documents/GitHub/Measles-Assignment/Measles/pink cat collar.jpg"); //Dimensions: width = 263; height = 192
+  catCollar = loadImage("../pink cat collar.jpg"); //Dimensions: width = 263; height = 192
   int picWidth = 263;
   int picHeight = 192;
   if (picWidth >= picHeight) { //image dimension comparison
