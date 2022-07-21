@@ -1,6 +1,6 @@
 void drawMethod() {
   //rect(imageX, imageY, imageWidth, imageHeight);
-  //image(catCollar, imageX, imageY, imageWidth, imageHeight); //picWidthAdjusted, picHeightAdjusted
+
   
   
   xStar1 = random(0, xCenter-faceRadius);
