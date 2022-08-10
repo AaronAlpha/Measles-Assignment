@@ -77,7 +77,7 @@ void drawMethod() {
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNostril, xRightNostril, yRightNostril);//Nose
   fill(resetWhite);
   //ellipse(); //frekles
-  strokeCap(ROUND); //Default is ROUND; PROJECT is another option  //sets style for line endings, 3options: SQUARE, ROUND, EXTENDED(all caps)
+  strokeCap(ROUND); //Default is ROUND; PROJECT is another option  //sets style for line endings, 3options: SQUARE, ROUND, PROJECT(i.e. EXTENDED)(all caps)
   strokeWeight(thack);//sets width of stroke used for lines, points and borders of shapes; width units: pixel;(option 1 is default)
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
   strokeWeight(1);
